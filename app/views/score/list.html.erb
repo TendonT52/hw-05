@@ -1,0 +1,11 @@
+<h1> List </h1>
+<h2> Max  <%= @m.name %> <%= @m.score %> </h2>
+<% for i in @recode %>
+  <div class="field" id="type#{i}">
+    <div> <%= i.name %>  <%= i.score %> </div>
+    <%= button_to "delete", "/score/delete", params: { id: i.id } %>
+    <%= button_to "edit", "/score/edit", params: { id: i.id, name: i.name, score: i.score, error: "" }, method: :get %>
+    <br>
+  </div>
+<% end %>
+

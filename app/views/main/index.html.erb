@@ -1,0 +1,5 @@
+<%= form_with url: "/main/test", method: :get, data: {turbo: false} do |f| %>
+  <%= f.hidden_field :root, value: true %>
+  <%= f.collection_select :num, @nums, :to_s, :to_s, prompt: true %>
+  <%= f.submit :Go %>
+<% end %>

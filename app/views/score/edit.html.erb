@@ -1,0 +1,13 @@
+<%= form_with url: "/score/update", method: :get, data: { turbo: false } do |f| %>
+    <div class="field" id="type">
+      <%= f.hidden_field :id, value: params["id"] %>
+      <%= f.label "name", "name" %>
+      <%= f.text_field "name", :value => params["name"] %>
+      <%= f.label :"score", "score" %>
+      <%= f.number_field :"score", in: 0..100, step: 1, :value => params["score"] %>
+      <%= f.label "name", params["error"] %>
+    <br>
+    </div>
+  <%= f.submit %>
+<% end %>
+<%= button_to "back", "/score/list", method: :get %>

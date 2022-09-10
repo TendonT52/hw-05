@@ -1,0 +1,8 @@
+<h1> Result </h1>
+<% for i in 1..@n %>
+  <div class="field" id="type#{i}">
+    <div> <%= params["subject#{i}"] %> <%= params["score#{i}"] %>  <%= params["status#{i}"] %></div>
+    <br>
+  </div>
+<% end %>
+<%= link_to("List all subjects", controller: "score", action: "list") %>

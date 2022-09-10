@@ -1,0 +1,15 @@
+<%= form_with url: "/main/result", method: :get , data: {turbo: false} do |f| %>
+  <% for i in 1..@n do %>
+    <div class="field" id="type#{i}">
+      <%= f.hidden_field :root, value: false %>
+      <%= f.hidden_field :num, value: @n %>
+      <%= f.label "subject#{i}", "subject#{i}" %>
+      <%= f.text_field "subject#{i}", :value => params["subject#{i}"]%>
+      <%= f.label :"score#{i}", "score#{i}" %>
+      <%= f.number_field :"score#{i}", in: 0..100, step: 1 ,:value => params["score#{i}"] %>
+      <%= f.label "subject#{i}", params["error#{i}"] %>
+    <br>
+    </div>
+  <% end %>
+  <%= f.submit %>
+<% end %>
