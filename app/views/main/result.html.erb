@@ -1,4 +1,5 @@
 <h1> Result </h1>
+<h2> Max <%= @ls[@ans] %> <%= @ln[@ans] %></h2>
 <% for i in 1..@n %>
   <div class="field" id="type#{i}">
     <div> <%= params["subject#{i}"] %> <%= params["score#{i}"] %>  <%= params["status#{i}"] %></div>

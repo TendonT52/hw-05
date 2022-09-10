@@ -44,6 +44,19 @@ class MainController < ApplicationController
       end
     end
 
+    @ls = []
+    @ln = []
+    for i in 1..@n
+      if params["subject#{i}"] == "" or params["score#{i}"] == ""
+        re = false
+        break
+      else
+        @ls = @ls.append(params["subject#{i}"])
+        @ln = @ln.append(params["score#{i}"])
+      end
+    end
+    @ans = @ln.each_with_index.max[1]
+
   end
 
   def error
